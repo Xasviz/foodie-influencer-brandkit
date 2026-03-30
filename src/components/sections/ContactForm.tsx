@@ -29,8 +29,8 @@ const formSchema = z.object({
   brandName: z.string().min(2, {
     message: "El nombre de la marca debe tener al menos 2 caracteres.",
   }),
-  campaignType: z.string({
-    required_error: "Por favor selecciona un tipo de campaña.",
+  campaignType: z.string().min(1, {
+    message: "Por favor selecciona un tipo de campaña.",
   }),
   budget: z.array(z.number()),
   message: z.string().optional(),
