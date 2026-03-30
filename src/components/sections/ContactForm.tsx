@@ -120,8 +120,9 @@ export function ContactForm() {
                       max={5000}
                       step={100}
                       onValueChange={(val) => {
-                        setBudgetValue(val);
-                        field.onChange(val);
+                        const numericValue = Array.isArray(val) ? val : [val];
+                        setBudgetValue(numericValue);
+                        field.onChange(numericValue);
                       }}
                       className="py-4"
                     />
